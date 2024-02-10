@@ -1,9 +1,14 @@
 import React from 'react'
-
-const Offers = () => {
+import Offer from "./Offer.js"
+import "../styles/Offers.css"
+const Offers = ({offers}) => {
   return (
-    <div>
-      
+    <div className="offersSection">
+      {
+        offers.map((item,index)=>(
+          <Offer key = {item.image} index = {index} src = {item.image} link = {item.url} />
+        ))
+      }
     </div>
   )
 }
